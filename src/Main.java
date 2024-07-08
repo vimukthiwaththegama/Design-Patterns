@@ -1,8 +1,10 @@
-import com.phone.Android;
-import com.phone.Os;
-import com.phone.OsFactory;
+import com.builder.Phone;
+import com.builder.PhoneBuilder;
+import com.factory.Android;
+import com.factory.Os;
+import com.factory.OsFactory;
 
-public class FactoryMain
+public class Main
 {
     public static void main( String[] args )
     {
@@ -19,6 +21,12 @@ public class FactoryMain
 
         Android android = new Android();
         android.spec();
+
+        Phone phone = new PhoneBuilder().setBrand( "Samsung" ).setColor( "Black" ).getPhone();
+        System.out.println(phone);
+
+        Phone phone1 = new PhoneBuilder().setPrice( 100000.00 ).getPhone();
+        System.out.println(phone1);
 
     }
 }
