@@ -31,7 +31,7 @@ public class Phone
     @Override
     public String toString()
     {
-        return "Phone{" +
+        return "Smartphone{" +
                        "brand='" + brand + '\'' +
                        ", model='" + model + '\'' +
                        ", color='" + color + '\'' +

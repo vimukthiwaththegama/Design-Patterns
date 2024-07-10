@@ -4,9 +4,12 @@ import com.adapter.Iphone;
 import com.adapter.TypeCcable;
 import com.builder.Phone;
 import com.builder.PhoneBuilder;
+import com.composite.Computer;
+import com.composite.ComputerLeaf;
 import com.factory.Android;
 import com.factory.Os;
 import com.factory.OsFactory;
+import com.prototype.PhoneShop;
 
 public class Main
 {
@@ -37,7 +40,21 @@ public class Main
         Iphone iphone = new Iphone();
         Cable cable = new ChargingAdapter();
         iphone.setCable( cable );
-        iphone.chargePhone( "Phone is charging" );
+        iphone.chargePhone( "Smartphone is charging" );
 
+        //Composite design pattern
+        ComputerLeaf computerLeaf = new ComputerLeaf("MB",1000);
+        ComputerLeaf computerLeaf1 = new ComputerLeaf( "HDD",2000 );
+        computerLeaf.showPrice();
+
+        Computer computer = new Computer();
+        computer.addComponents( computerLeaf );
+        computer.addComponents( computerLeaf1 );
+        computer.showPrice();
+
+
+        //Prototype design pattern
+        PhoneShop ps =new PhoneShop();
+        System.out.println(ps);
     }
 }
