@@ -2,7 +2,7 @@ package com.prototype;
 
 import java.util.List;
 
-public class PhoneShop
+public class PhoneShop implements Cloneable
 {
     private String shopName;
     private List<Smartphone> phoneList;
@@ -34,5 +34,20 @@ public class PhoneShop
                        "phoneList=" + phoneList +
                        ", shopName='" + shopName + '\'' +
                        '}';
+    }
+
+    @Override
+    public PhoneShop clone()
+    {
+        try
+        {
+            PhoneShop clone = ( PhoneShop ) super.clone();
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return clone;
+        }
+        catch( CloneNotSupportedException e )
+        {
+            throw new AssertionError();
+        }
     }
 }

@@ -10,6 +10,7 @@ import com.factory.Android;
 import com.factory.Os;
 import com.factory.OsFactory;
 import com.prototype.PhoneShop;
+import com.prototype.Smartphone;
 
 public class Main
 {
@@ -56,5 +57,10 @@ public class Main
         //Prototype design pattern
         PhoneShop ps =new PhoneShop();
         System.out.println(ps);
+        for(int i=0;i<5;i++){
+            Smartphone smartphone = new Smartphone();
+            smartphone.setBrandName( "Phone"+i );
+            smartphone.setPrice( String.valueOf( i*1000 ) );
+        }
     }
 }
