@@ -1,11 +1,12 @@
 package com.prototype;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PhoneShop implements Cloneable
 {
     private String shopName;
-    private List<Smartphone> phoneList;
+    private List<Smartphone> phoneList = new ArrayList<>();
 
     public List<Smartphone> getPhoneList()
     {
@@ -36,6 +37,9 @@ public class PhoneShop implements Cloneable
                        '}';
     }
 
+    public void addPhones(Smartphone smartphone){
+        phoneList.add( smartphone );
+    }
     @Override
     public PhoneShop clone()
     {

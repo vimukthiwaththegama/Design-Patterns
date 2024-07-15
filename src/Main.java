@@ -56,11 +56,19 @@ public class Main
 
         //Prototype design pattern
         PhoneShop ps =new PhoneShop();
-        System.out.println(ps);
+        ps.setShopName( "Phone Shop 1" );
         for(int i=0;i<5;i++){
             Smartphone smartphone = new Smartphone();
-            smartphone.setBrandName( "Phone"+i );
-            smartphone.setPrice( String.valueOf( i*1000 ) );
+            smartphone.setBrandName( "Phone"+(i+1) );
+            smartphone.setPrice( String.valueOf( (i+1)*1000 ) );
+            ps.addPhones( smartphone );
+
+
         }
+        PhoneShop ps1 = ps.clone();
+
+        System.out.println(ps);
+        System.out.println();
+        System.out.println(ps1);
     }
 }
